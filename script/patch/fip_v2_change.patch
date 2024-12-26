@@ -1,0 +1,10 @@
+--- /mnt/f/githubfrok/p1/duo-buildroot-sdk/duo-buildroot-sdk/build/scripts/old/fip_v2.mk	2024-12-25 10:35:19.203539300 +0800
++++ /mnt/f/githubfrok/p1/duo-buildroot-sdk/duo-buildroot-sdk/build/scripts/fip_v2.mk	2024-12-24 18:11:44.576072000 +0800
+@@ -13,6 +13,7 @@
+ ifeq ($(call qstrip,${CONFIG_ARCH}),riscv)
+ fsbl-build: opensbi
+ endif
++CONFIG_ENABLE_FREERTOS :=
+ ifeq ( ${CONFIG_ENABLE_FREERTOS},y)
+ fsbl-build: rtos
+ fsbl%: export BLCP_2ND_PATH=${FREERTOS_PATH}/cvitek/install/bin/cvirtos.bin
